@@ -1,0 +1,227 @@
+{
+  "sources": [
+    {
+      "name": "Codeforces API",
+      "url": "https://codeforces.com/api/contest.list"
+    },
+    {
+      "name": "CTFtime API",
+      "url": "https://ctftime.org/api/v1/events/"
+    }
+  ],
+  "collected_at": "2026-10-22T13:45:08.840335Z",
+  "count": 30,
+  "target_count": 30,
+  "competitions": [
+    {
+      "name": "cruXipher 2026 - ATMoS '26, BITS Hyderabad",
+      "platform": "CTFtime",
+      "start_date": "2026-10-23T00:30:00Z",
+      "duration_minutes": 2880,
+      "link": "https://cruxipher.crux-bphc.com/"
+    },
+    {
+      "name": "CREST CTF 2.0",
+      "platform": "CTFtime",
+      "start_date": "2026-10-23T05:30:00Z",
+      "duration_minutes": 360,
+      "link": "https://crest.ctf7.com/"
+    },
+    {
+      "name": "HITCON CTF 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-10-23T14:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://ctf2026.hitcon.org/"
+    },
+    {
+      "name": "RSTCON 2026 CTF",
+      "platform": "CTFtime",
+      "start_date": "2026-10-23T17:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://ctf.rstcon.org/"
+    },
+    {
+      "name": "Hack.lu CTF 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-10-23T18:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://flu.xxx/"
+    },
+    {
+      "name": "Cryovault 2026 Finals",
+      "platform": "CTFtime",
+      "start_date": "2026-10-24T03:30:00Z",
+      "duration_minutes": 1620,
+      "link": "https://isfcrpesu.ctfd.io/"
+    },
+    {
+      "name": "H7CTF 2026 Finals",
+      "platform": "CTFtime",
+      "start_date": "2026-10-24T06:30:00Z",
+      "duration_minutes": 1440,
+      "link": "https://2026.h7tex.com/"
+    },
+    {
+      "name": "Codeforces Round 1129 (Div. 2)",
+      "platform": "Codeforces",
+      "start_date": "2026-10-24T11:05:00Z",
+      "duration_minutes": 120,
+      "link": "https://codeforces.com/contests/2277"
+    },
+    {
+      "name": "BSides Peoria CTF 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-10-24T14:45:00Z",
+      "duration_minutes": 360,
+      "link": "https://bsidespeoriac.tf/"
+    },
+    {
+      "name": "Codeforces Round 1130 (Div. 2)",
+      "platform": "Codeforces",
+      "start_date": "2026-10-26T14:35:00Z",
+      "duration_minutes": 135,
+      "link": "https://codeforces.com/contests/2272"
+    },
+    {
+      "name": "Sudocrypt v16.0",
+      "platform": "CTFtime",
+      "start_date": "2026-10-27T03:30:00Z",
+      "duration_minutes": 2160,
+      "link": "https://sudocrypt.com/"
+    },
+    {
+      "name": "Srdnlen CTF 2026 Finals (Sardinia Cyber Camp)",
+      "platform": "CTFtime",
+      "start_date": "2026-10-29T09:00:00Z",
+      "duration_minutes": 480,
+      "link": "https://ctf.srdnlen.it/"
+    },
+    {
+      "name": "Hacker's Gambit 2026 (Round 2 – Grand Finale)",
+      "platform": "CTFtime",
+      "start_date": "2026-10-30T06:30:00Z",
+      "duration_minutes": 1440,
+      "link": "https://unstop.com/p/hackers-gambit-2026-jaihind-college-of-engineering-kuran-1723293"
+    },
+    {
+      "name": "CTF@AC26 - Finals",
+      "platform": "CTFtime",
+      "start_date": "2026-10-30T10:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://ctf.ac.upt.ro/"
+    },
+    {
+      "name": "HI Cyber Con 2026 CTF",
+      "platform": "CTFtime",
+      "start_date": "2026-10-30T14:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://ctf.hiddeninvestigations.net/"
+    },
+    {
+      "name": "2026 Qiangwang Challenge on Cyber Mimic Defense Qualification",
+      "platform": "CTFtime",
+      "start_date": "2026-10-31T02:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://nest.pmlabs.com.cn/en/events/qiangwang-9/registration"
+    },
+    {
+      "name": "Russian CTF Cup X Qualifier",
+      "platform": "CTFtime",
+      "start_date": "2026-10-31T09:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://ctfcup.ru/"
+    },
+    {
+      "name": "StealthCup 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-10-31T13:00:00Z",
+      "duration_minutes": 480,
+      "link": "https://stealth.ait.ac.at/"
+    },
+    {
+      "name": "Codeforces Round 1131 (Div. 3)",
+      "platform": "Codeforces",
+      "start_date": "2026-10-31T14:35:00Z",
+      "duration_minutes": 135,
+      "link": "https://codeforces.com/contests/2278"
+    },
+    {
+      "name": "ICPC 2026 Online Challenge 2 powered by Huawei",
+      "platform": "Codeforces",
+      "start_date": "2026-11-05T11:00:00Z",
+      "duration_minutes": 20160,
+      "link": "https://codeforces.com/contests/2281"
+    },
+    {
+      "name": "HKCERT CTF 2026 (Qualifying Round)",
+      "platform": "CTFtime",
+      "start_date": "2026-11-06T10:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://ctf.hkcert.org/"
+    },
+    {
+      "name": "PINK+ CTF 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-11-06T12:00:00Z",
+      "duration_minutes": 4320,
+      "link": "https://ctf.pink.bayern/"
+    },
+    {
+      "name": "CSCTF 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-11-06T13:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://2026.chronos-security.ro/"
+    },
+    {
+      "name": "SpookyCTF 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-11-06T17:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://spooky.ctfd.io/"
+    },
+    {
+      "name": "BlackAlps CTF 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-11-06T18:15:00Z",
+      "duration_minutes": 255,
+      "link": "https://blackalps.ch/ba-26/contest"
+    },
+    {
+      "name": "Mimic",
+      "platform": "CTFtime",
+      "start_date": "2026-11-07T12:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://ctf.rarebytehub.com/events/mimic"
+    },
+    {
+      "name": "Codeforces Round (Div. 1)",
+      "platform": "Codeforces",
+      "start_date": "2026-11-07T14:35:00Z",
+      "duration_minutes": 150,
+      "link": "https://codeforces.com/contests/2279"
+    },
+    {
+      "name": "Codeforces Round (Div. 2)",
+      "platform": "Codeforces",
+      "start_date": "2026-11-07T14:35:00Z",
+      "duration_minutes": 150,
+      "link": "https://codeforces.com/contests/2280"
+    },
+    {
+      "name": "CSAW CTF Final Round 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-11-12T17:00:00Z",
+      "duration_minutes": 2160,
+      "link": "https://ctf.csaw.io/"
+    },
+    {
+      "name": "Platypwn 2026",
+      "platform": "CTFtime",
+      "start_date": "2026-11-13T17:00:00Z",
+      "duration_minutes": 1080,
+      "link": "https://platypwnies.de/events/platypwn/"
+    }
+  ]
+}
