@@ -1,0 +1,225 @@
+{
+  "sources": [
+    {
+      "name": "Codeforces API",
+      "url": "https://codeforces.com/api/contest.list"
+    },
+    {
+      "name": "CTFtime API",
+      "url": "https://ctftime.org/api/v1/events/"
+    }
+  ],
+  "collected_at": "2026-10-23T12:29:43.616073Z",
+  "count": 19,
+  "competitions": [
+    {
+      "name": "HITCON CTF 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-23T14:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://ctf2026.hitcon.org",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "RSTCON 2026 CTF",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-23T17:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://ctf.rstcon.org",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Cryovault 2026 Finals",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-24T03:30:00Z",
+      "duration_minutes": 1620,
+      "link": "https://isfcrpesu.ctfd.io",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "H7CTF 2026 Finals",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-24T06:30:00Z",
+      "duration_minutes": 1440,
+      "link": "https://2026.h7tex.com",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Codeforces Round 1129 (Div. 2)",
+      "platform": "Codeforces",
+      "category": "Programming",
+      "start_date": "2026-10-24T11:05:00Z",
+      "duration_minutes": 120,
+      "link": "https://codeforces.com/contests/2277",
+      "source_api": "https://codeforces.com/api/contest.list",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Codeforces Round 1130 (Div. 2)",
+      "platform": "Codeforces",
+      "category": "Programming",
+      "start_date": "2026-10-26T14:35:00Z",
+      "duration_minutes": 135,
+      "link": "https://codeforces.com/contests/2272",
+      "source_api": "https://codeforces.com/api/contest.list",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Sudocrypt v16.0",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-27T03:30:00Z",
+      "duration_minutes": 2160,
+      "link": "https://sudocrypt.com",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Hacker's Gambit 2026 (Round 2 – Grand Finale)",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-30T06:30:00Z",
+      "duration_minutes": 1440,
+      "link": "https://unstop.com/p/hackers-gambit-2026-jaihind-college-of-engineering-kuran-1723293",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "HI Cyber Con 2026 CTF",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-30T14:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://ctf.hiddeninvestigations.net",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Codeforces Round 1131 (Div. 3)",
+      "platform": "Codeforces",
+      "category": "Programming",
+      "start_date": "2026-10-31T14:35:00Z",
+      "duration_minutes": 135,
+      "link": "https://codeforces.com/contests/2278",
+      "source_api": "https://codeforces.com/api/contest.list",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "ICPC 2026 Online Challenge 2 powered by Huawei",
+      "platform": "Codeforces",
+      "category": "Programming",
+      "start_date": "2026-11-05T11:00:00Z",
+      "duration_minutes": 20160,
+      "link": "https://codeforces.com/contests/2281",
+      "source_api": "https://codeforces.com/api/contest.list",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "HKCERT CTF 2026 (Qualifying Round)",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-06T10:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://ctf.hkcert.org",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "SpookyCTF 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-06T17:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://spooky.ctfd.io",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Mimic",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-07T12:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://ctf.rarebytehub.com/events/mimic",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Codeforces Round (Div. 1)",
+      "platform": "Codeforces",
+      "category": "Programming",
+      "start_date": "2026-11-07T14:35:00Z",
+      "duration_minutes": 150,
+      "link": "https://codeforces.com/contests/2279",
+      "source_api": "https://codeforces.com/api/contest.list",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Codeforces Round (Div. 2)",
+      "platform": "Codeforces",
+      "category": "Programming",
+      "start_date": "2026-11-07T14:35:00Z",
+      "duration_minutes": 150,
+      "link": "https://codeforces.com/contests/2280",
+      "source_api": "https://codeforces.com/api/contest.list",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "CSAW CTF Final Round 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-12T17:00:00Z",
+      "duration_minutes": 2160,
+      "link": "https://ctf.csaw.io",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "WolvCTF 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-13T23:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://wolvctf.io",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "InIt CTF",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-14T15:30:00Z",
+      "duration_minutes": 480,
+      "link": "https://hackersinindia.com/init-ctf",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    }
+  ]
+}
