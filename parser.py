@@ -1,7 +1,7 @@
 
 import re
 from datetime import datetime, timedelta, timezone
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import urlsplit, urlunsplit, urlparse
 
 
 DAYS_AHEAD = 180
@@ -94,63 +94,78 @@ def utc_string(value):
     )
 
 
-
 def normalize_competition(record):
-    from datetime import datetime, timezone, timedelta
-    from urllib.parse import urlparse
-
     if not isinstance(record, dict):
+        print("REJECTED: record is not a dictionary")
         return None
 
     name = clean_name(record.get("name", ""))
     platform = record.get("platform", "")
     start_date = parse_datetime(record.get("start_date"))
     duration = record.get("duration_minutes")
-    url = normalize_url(record.get("competition_url", record.get("link", "")))
+    url = normalize_url(
+        record.get("competition_url", record.get("link", ""))
+    )
 
-    if not name or platform not in ALLOWED_PLATFORMS:
+    def reject(reason):
+        print(
+            f"REJECTED: {record.get('name', '<unnamed>')} - {reason}"
+        )
         return None
+
+    if not name:
+        return reject("invalid or missing name")
+
+    if platform not in ALLOWED_PLATFORMS:
+        return reject(f"unsupported platform: {platform}")
 
     if not start_date:
-        return None
+        return reject("invalid or missing start date")
 
     now = datetime.now(timezone.utc)
-    if start_date < now or start_date > now + timedelta(days=DAYS_AHEAD):
-        return None
 
-    if isinstance(duration, bool) or not isinstance(duration, int) or duration <= 0:
-        return None
+    if start_date < now:
+        return reject("competition has already started")
 
-    parsed_url = urlparse(url)
-    host = (parsed_url.hostname or "").lower()
+    if start_date > now + timedelta(days=DAYS_AHEAD):
+        return reject("competition is more than 180 days away")
 
-    if platform == "Codeforces" and not (
-        host == "codeforces.com" or host.endswith(".codeforces.com")
+    if (
+        isinstance(duration, bool)
+        or not isinstance(duration, int)
+        or duration <= 0
     ):
-        return None
+        return reject(f"invalid duration: {duration}")
 
-    if platform == "CTFtime" and not (
-        host == "ctftime.org" or host.endswith(".ctftime.org")
-        or host.endswith(".hitcon.org")
-        or host.endswith(".rstcon.org")
-        or host.endswith(".org")
-        or host.endswith(".com")
-        or host.endswith(".net")
-        or host.endswith(".io")
-    ):
-        return None
-    
-    source_api = record.get("source_api", record.get("_source_api"))
+    if not url:
+        return reject("invalid or missing URL")
+
+    host = (urlparse(url).hostname or "").lower()
+
+    if platform == "Codeforces":
+        if host != "codeforces.com" and not host.endswith(
+            ".codeforces.com"
+        ):
+            return reject(f"invalid Codeforces URL: {url}")
+
+    elif platform == "CTFtime":
+        host = urlparse(url).hostname or ""
+
+        if not host or "." not in host:
+            return reject(f"invalid CTFtime URL: {url}")
+
+    source_api = record.get(
+        "source_api", record.get("_source_api")
+    )
 
     if source_api is None:
-      if platform == "Codeforces":
-        source_api = "https://codeforces.com/api/contest.list"
-      elif platform == "CTFtime":
-        source_api = "https://ctftime.org/api/v1/events/"
+        if platform == "Codeforces":
+            source_api = "https://codeforces.com/api/contest.list"
+        else:
+            source_api = "https://ctftime.org/api/v1/events/"
 
     if source_api not in ALLOWED_APIS:
-       return None
-
+        return reject(f"unsupported source API: {source_api}")
 
     return {
         "name": name,
@@ -165,16 +180,14 @@ def normalize_competition(record):
     }
 
 
-
-
 def deduplicate(records):
     unique = {}
-    
+
     for record in records:
         if not isinstance(record, dict):
             continue
 
-        url = record.get("competition_url") or record.get("link")
+        url = record.get("link") or record.get("competition_url")
         name = record.get("name", "")
         start_date = record.get("start_date", "")
 

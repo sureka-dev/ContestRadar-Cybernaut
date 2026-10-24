@@ -1,69 +1,26 @@
 {
-  "sources": [
-    {
-      "name": "Codeforces API",
-      "url": "https://codeforces.com/api/contest.list"
-    },
-    {
-      "name": "CTFtime API",
-      "url": "https://ctftime.org/api/v1/events/"
-    }
-  ],
-  "collected_at": "2026-10-23T12:29:43.616073Z",
-  "count": 19,
+  "collected_at": "2026-10-24T07:03:15.890589+00:00",
+  "count": 30,
   "competitions": [
-    {
-      "name": "HITCON CTF 2026",
-      "platform": "CTFtime",
-      "category": "Cybersecurity",
-      "start_date": "2026-10-23T14:00:00Z",
-      "duration_minutes": 2880,
-      "link": "https://ctf2026.hitcon.org",
-      "source_api": "https://ctftime.org/api/v1/events/",
-      "status": "upcoming",
-      "timezone": "UTC"
-    },
-    {
-      "name": "RSTCON 2026 CTF",
-      "platform": "CTFtime",
-      "category": "Cybersecurity",
-      "start_date": "2026-10-23T17:00:00Z",
-      "duration_minutes": 2880,
-      "link": "https://ctf.rstcon.org",
-      "source_api": "https://ctftime.org/api/v1/events/",
-      "status": "upcoming",
-      "timezone": "UTC"
-    },
-    {
-      "name": "Cryovault 2026 Finals",
-      "platform": "CTFtime",
-      "category": "Cybersecurity",
-      "start_date": "2026-10-24T03:30:00Z",
-      "duration_minutes": 1620,
-      "link": "https://isfcrpesu.ctfd.io",
-      "source_api": "https://ctftime.org/api/v1/events/",
-      "status": "upcoming",
-      "timezone": "UTC"
-    },
-    {
-      "name": "H7CTF 2026 Finals",
-      "platform": "CTFtime",
-      "category": "Cybersecurity",
-      "start_date": "2026-10-24T06:30:00Z",
-      "duration_minutes": 1440,
-      "link": "https://2026.h7tex.com",
-      "source_api": "https://ctftime.org/api/v1/events/",
-      "status": "upcoming",
-      "timezone": "UTC"
-    },
     {
       "name": "Codeforces Round 1129 (Div. 2)",
       "platform": "Codeforces",
       "category": "Programming",
       "start_date": "2026-10-24T11:05:00Z",
-      "duration_minutes": 120,
+      "duration_minutes": 135,
       "link": "https://codeforces.com/contests/2277",
       "source_api": "https://codeforces.com/api/contest.list",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "BSides Peoria CTF 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-24T14:45:00Z",
+      "duration_minutes": 360,
+      "link": "https://bsidespeoriac.tf",
+      "source_api": "https://ctftime.org/api/v1/events/",
       "status": "upcoming",
       "timezone": "UTC"
     },
@@ -90,6 +47,17 @@
       "timezone": "UTC"
     },
     {
+      "name": "Srdnlen CTF 2026 Finals (Sardinia Cyber Camp)",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-29T09:00:00Z",
+      "duration_minutes": 480,
+      "link": "https://ctf.srdnlen.it",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
       "name": "Hacker's Gambit 2026 (Round 2 – Grand Finale)",
       "platform": "CTFtime",
       "category": "Cybersecurity",
@@ -101,12 +69,56 @@
       "timezone": "UTC"
     },
     {
+      "name": "CTF@AC26 - Finals",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-30T10:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://ctf.ac.upt.ro",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
       "name": "HI Cyber Con 2026 CTF",
       "platform": "CTFtime",
       "category": "Cybersecurity",
       "start_date": "2026-10-30T14:00:00Z",
       "duration_minutes": 2880,
       "link": "https://ctf.hiddeninvestigations.net",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "2026 Qiangwang Challenge on Cyber Mimic Defense Qualification",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-31T02:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://nest.pmlabs.com.cn/en/events/qiangwang-9/registration",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Russian CTF Cup X Qualifier",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-31T09:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://ctfcup.ru",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "StealthCup 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-10-31T13:00:00Z",
+      "duration_minutes": 480,
+      "link": "https://stealth.ait.ac.at",
       "source_api": "https://ctftime.org/api/v1/events/",
       "status": "upcoming",
       "timezone": "UTC"
@@ -145,12 +157,45 @@
       "timezone": "UTC"
     },
     {
+      "name": "PINK+ CTF 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-06T12:00:00Z",
+      "duration_minutes": 4320,
+      "link": "https://ctf.pink.bayern",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "CSCTF 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-06T13:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://2026.chronos-security.ro",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
       "name": "SpookyCTF 2026",
       "platform": "CTFtime",
       "category": "Cybersecurity",
       "start_date": "2026-11-06T17:00:00Z",
       "duration_minutes": 1440,
       "link": "https://spooky.ctfd.io",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "BlackAlps CTF 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-06T18:15:00Z",
+      "duration_minutes": 255,
+      "link": "https://blackalps.ch/ba-26/contest",
       "source_api": "https://ctftime.org/api/v1/events/",
       "status": "upcoming",
       "timezone": "UTC"
@@ -200,6 +245,17 @@
       "timezone": "UTC"
     },
     {
+      "name": "Platypwn 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-13T17:00:00Z",
+      "duration_minutes": 1080,
+      "link": "https://platypwnies.de/events/platypwn",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
       "name": "WolvCTF 2026",
       "platform": "CTFtime",
       "category": "Cybersecurity",
@@ -217,6 +273,61 @@
       "start_date": "2026-11-14T15:30:00Z",
       "duration_minutes": 480,
       "link": "https://hackersinindia.com/init-ctf",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "EyesOpenCTF 7th edition",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-20T10:00:00Z",
+      "duration_minutes": 2880,
+      "link": "https://eyesopensecurity.com/ctf-briefing.html",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "GlacierCTF 2026",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-20T18:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://glacierctf.com",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Outback Overflow",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-20T23:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://outbackoverflow26.hscyber.org",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Seize da Flaq",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-21T06:30:00Z",
+      "duration_minutes": 1200,
+      "link": "https://seizedaflaq.cyberonites.com",
+      "source_api": "https://ctftime.org/api/v1/events/",
+      "status": "upcoming",
+      "timezone": "UTC"
+    },
+    {
+      "name": "Cyber Ninja CTF 2026 - BLACKOUT",
+      "platform": "CTFtime",
+      "category": "Cybersecurity",
+      "start_date": "2026-11-21T09:00:00Z",
+      "duration_minutes": 1440,
+      "link": "https://www.cyber-ninja-ctf.fr",
       "source_api": "https://ctftime.org/api/v1/events/",
       "status": "upcoming",
       "timezone": "UTC"

@@ -1,6 +1,8 @@
+
 import json
 import sqlite3
 from pathlib import Path
+from contextlib import contextmanager
 
 
 # Project folders
@@ -11,12 +13,18 @@ DB_PATH = DATABASE_DIR / "contestradar.db"
 SCHEMA_PATH = DATABASE_DIR / "schema.sql"
 
 
+@contextmanager
 def get_connection():
-    """Create and return a database connection."""
+    """Create, use, and close a database connection."""
     connection = sqlite3.connect(DB_PATH)
     connection.row_factory = sqlite3.Row
     connection.execute("PRAGMA foreign_keys = ON")
-    return connection
+
+    try:
+        with connection:
+            yield connection
+    finally:
+        connection.close()
 
 
 def initialize_db():
@@ -27,21 +35,16 @@ def initialize_db():
 
 
 def upsert_competition(record):
-    """
-    Insert a competition or update it if the same
-    platform, title, start time and URL already exist.
-
-    Accepts records from parser.py:
-    name, platform, category, start_date,
-    duration_minutes, link, source_api, status, timezone.
-    """
+    """Insert or update one competition."""
     if not isinstance(record, dict):
         raise ValueError("Competition must be a dictionary.")
 
-    # Support both cleaned parser records and database-style records.
     title = record.get("name", record.get("title"))
     start_time = record.get("start_date", record.get("start_time"))
-    url = record.get("link", record.get("competition_url", record.get("url")))
+    url = record.get(
+        "link", record.get("competition_url", record.get("url"))
+    )
+    source_api = record.get("source_api", record.get("_source_api"))
 
     required = {
         "title": title,
@@ -49,7 +52,7 @@ def upsert_competition(record):
         "category": record.get("category"),
         "start_time": start_time,
         "url": url,
-        "source_api": record.get("source_api", record.get("_source_api")),
+        "source_api": source_api,
     }
 
     for field, value in required.items():
@@ -72,7 +75,7 @@ def upsert_competition(record):
         start_time.strip(),
         duration,
         url.strip(),
-        required["source_api"].strip(),
+        source_api.strip(),
         record.get("status", "upcoming"),
         record.get("timezone", "UTC"),
     )
@@ -109,48 +112,58 @@ def upsert_competition(record):
 
 
 def upsert_competitions(records):
-    """Insert or update a collection of cleaned records."""
+    """Insert or update multiple competitions."""
     if not isinstance(records, list):
         raise ValueError("records must be a list.")
 
-    # A single transaction prevents partial imports on failure.
+    # Validate records before writing to the database.
+    for record in records:
+        if not isinstance(record, dict):
+            raise ValueError("Each competition must be a dictionary.")
+
+        title = record.get("name", record.get("title"))
+        start_time = record.get("start_date", record.get("start_time"))
+        url = record.get(
+            "link", record.get("competition_url", record.get("url"))
+        )
+        source_api = record.get("source_api", record.get("_source_api"))
+        duration = record.get("duration_minutes")
+
+        required_values = [
+            title,
+            record.get("platform"),
+            record.get("category"),
+            start_time,
+            url,
+            source_api,
+        ]
+
+        if any(
+            not isinstance(value, str) or not value.strip()
+            for value in required_values
+        ):
+            raise ValueError("A competition has missing required fields.")
+
+        if (
+            isinstance(duration, bool)
+            or not isinstance(duration, int)
+            or duration <= 0
+        ):
+            raise ValueError("Invalid competition duration.")
+
+    # Import all records in one transaction.
     with get_connection() as connection:
         for record in records:
-            if not isinstance(record, dict):
-                raise ValueError("Each competition must be a dictionary.")
-
             title = record.get("name", record.get("title"))
-            start_time = record.get("start_date", record.get("start_time"))
+            start_time = record.get(
+                "start_date", record.get("start_time")
+            )
             url = record.get(
-                "link",
-                record.get("competition_url", record.get("url")),
+                "link", record.get("competition_url", record.get("url"))
             )
             source_api = record.get(
                 "source_api", record.get("_source_api")
             )
-            duration = record.get("duration_minutes")
-
-            required_values = [
-                title,
-                record.get("platform"),
-                record.get("category"),
-                start_time,
-                url,
-                source_api,
-            ]
-
-            if any(
-                not isinstance(value, str) or not value.strip()
-                for value in required_values
-            ):
-                raise ValueError("A competition has missing required fields.")
-
-            if (
-                isinstance(duration, bool)
-                or not isinstance(duration, int)
-                or duration <= 0
-            ):
-                raise ValueError("Invalid competition duration.")
 
             connection.execute(
                 """
@@ -173,7 +186,7 @@ def upsert_competitions(records):
                     record["platform"].strip(),
                     record["category"].strip(),
                     start_time.strip(),
-                    duration,
+                    record["duration_minutes"],
                     url.strip(),
                     source_api.strip(),
                     record.get("status", "upcoming"),
@@ -185,7 +198,7 @@ def upsert_competitions(records):
 
 
 def get_competitions(platform=None, status=None, limit=None):
-    """Retrieve competitions, optionally filtered and sorted."""
+    """Retrieve competitions with optional filters."""
     sql = "SELECT * FROM competitions WHERE 1=1"
     params = []
 
@@ -200,8 +213,13 @@ def get_competitions(platform=None, status=None, limit=None):
     sql += " ORDER BY start_time ASC, title COLLATE NOCASE ASC"
 
     if limit is not None:
-        if isinstance(limit, bool) or not isinstance(limit, int) or limit <= 0:
+        if (
+            isinstance(limit, bool)
+            or not isinstance(limit, int)
+            or limit <= 0
+        ):
             raise ValueError("limit must be a positive integer.")
+
         sql += " LIMIT ?"
         params.append(limit)
 
@@ -211,7 +229,7 @@ def get_competitions(platform=None, status=None, limit=None):
 
 
 def get_competition_by_id(competition_id):
-    """Retrieve one competition using its database ID."""
+    """Retrieve one competition by its ID."""
     with get_connection() as connection:
         row = connection.execute(
             "SELECT * FROM competitions WHERE id = ?",
@@ -222,7 +240,7 @@ def get_competition_by_id(competition_id):
 
 
 def import_clean_data(json_path=None):
-    """Import Member 3's cleaned JSON file into SQLite."""
+    """Import cleaned competition records into SQLite."""
     if json_path is None:
         json_path = PROJECT_DIR / "Clean_data.json"
 
