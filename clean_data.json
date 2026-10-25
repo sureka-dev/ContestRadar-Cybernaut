@@ -1,29 +1,7 @@
 {
-  "collected_at": "2026-10-24T07:03:15.890589+00:00",
-  "count": 30,
+  "collected_at": "2026-10-25T17:03:13.422523+00:00",
+  "count": 28,
   "competitions": [
-    {
-      "name": "Codeforces Round 1129 (Div. 2)",
-      "platform": "Codeforces",
-      "category": "Programming",
-      "start_date": "2026-10-24T11:05:00Z",
-      "duration_minutes": 135,
-      "link": "https://codeforces.com/contests/2277",
-      "source_api": "https://codeforces.com/api/contest.list",
-      "status": "upcoming",
-      "timezone": "UTC"
-    },
-    {
-      "name": "BSides Peoria CTF 2026",
-      "platform": "CTFtime",
-      "category": "Cybersecurity",
-      "start_date": "2026-10-24T14:45:00Z",
-      "duration_minutes": 360,
-      "link": "https://bsidespeoriac.tf",
-      "source_api": "https://ctftime.org/api/v1/events/",
-      "status": "upcoming",
-      "timezone": "UTC"
-    },
     {
       "name": "Codeforces Round 1130 (Div. 2)",
       "platform": "Codeforces",
