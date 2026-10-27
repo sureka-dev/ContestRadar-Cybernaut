@@ -21,13 +21,13 @@ The project uses official APIs to collect competition data, validates and cleans
 ## 📸 Project Screenshots
 
 ### 🏠 Homepage
-![ContestRadar Homepage](docs/screenshots/homepage.png)
+![ContestRadar Homepage](docs/screenshots/homepage.PNG)
 
 ### 🏆 Competitions
-![ContestRadar Competitions](docs/screenshots/competitions.png)
+![ContestRadar Competitions](docs/screenshots/competitions.PNG)
 
 ### 💡 Example
-![ContestRadar Example](docs/screenshots/example.png)
+![ContestRadar Example](docs/screenshots/example.PNG)
 
 ## 🛠️ Technologies Used
 
